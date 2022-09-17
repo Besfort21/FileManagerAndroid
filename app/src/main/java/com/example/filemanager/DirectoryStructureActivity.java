@@ -1,6 +1,7 @@
 package com.example.filemanager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -30,5 +31,8 @@ public class DirectoryStructureActivity extends AppCompatActivity {
         }
 
         noFilesText.setVisibility(View.INVISIBLE);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new Adapter(getApplicationContext(),directoryStructure));
     }
 }
